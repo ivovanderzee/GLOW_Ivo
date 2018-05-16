@@ -8,8 +8,11 @@ int LED = 13;
 
 void setup() {
 
-  //pin 13 word geconfigureerd voor input
-  pinMode(LED, INPUT);
+  //pin 13 word geconfigureerd voor OUTPUT
+  pinMode(LED, OUTPUT);
+
+  //pin A0 word geconfigureerd voor INPUT
+  pinMode(ldr, INPUT);
 
   //Start de console zodat hier de waarde van de LDR uitgelezen kan worden
   Serial.begin(9600);
@@ -19,7 +22,7 @@ void setup() {
 void loop() {
 
 //Leest de waarde van de LDR uit
-ldrValue = analogRead(LDR);
+ldrValue = analogRead(ldr);
 
 //Print de waarde van de LDR in de console
 Serial.println(ldrValue)
